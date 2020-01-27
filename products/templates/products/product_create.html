@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+Test Product Page
+{% endblock %}
+{% block content %}
+<form action='.' method='POST'> {% csrf_token %}
+    <input type='text' name='title' placeholder='Your Title' />
+    <input type='submit' value='Save' />
+</form>
+{{ object.price }}
+{% endblock %}
