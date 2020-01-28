@@ -1,10 +1,19 @@
 from django.shortcuts import render
 from .models import Product
-from .forms import ProductForm
+from .forms import ProductForm, RawProductForms
 
 
 def product_create_view(request):
-    context = {}
+    my_form = RawProductForms()
+    if request.method == "POST":
+        my_form = RawProductForms(request.POST)
+        if my_form.is_valid:
+            print(my_form.data)
+        else:
+            print(my_form.errors)
+    context = {
+        'form': my_form
+    }
     return render(request, "products/product_create.html", context)
 
 
