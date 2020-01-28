@@ -4,7 +4,7 @@ Test Product Page
 {% endblock %}
 {% block content %}
 <form action='.' method='POST'> {% csrf_token %}
-    <input type='text' name='title' placeholder='Your Title' />
+    <input type='text' name='title' placeholder='Your TEXT' />
     <input type='submit' value='Save' />
 </form>
 {{ object.price }}
