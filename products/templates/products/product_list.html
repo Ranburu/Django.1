@@ -3,9 +3,7 @@
 List of Products
 {% endblock %}
 {% block content %}
-
-{{ object_list }}
-
+<h1>List of Products</h1>
 {% for instance in object_list %}
     <p>{{ instance.id }} - <a href= '{{ instance.get_absolute_url }}'>{{ instance.title }}</a></p>
 {% endfor %}
